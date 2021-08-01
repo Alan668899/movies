@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xing.mita.movie">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <!-- 硬件加速对X5视频播放非常重要，建议开启 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+        android:name=".app.SysApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/SplashTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.common.WelcomeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- Accepts URIs that begin with "http://www.example.com/gizmos” -->
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.aaqq.AaqqVideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout">
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="com.xing.mita.movie"
+                    android:scheme="http" />
+                <data
+                    android:host="com.xing.mita.movie"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.kk3.Kk3VideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.gqzy.GqzyVideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.aaqq.AaqqSearchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".activity.kk3.Kk3SearchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".activity.common.OfflineCacheActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.HistoryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.CollectionActivity"
+            android:resizeableActivity="false" />
+        <activity
+            android:name=".activity.common.AboutActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.ShareMovieActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.ShareAppActivity"
+            android:resizeableActivity="false" />
+        <activity
+            android:name=".activity.common.X5FullScreenActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout" />
+        <activity
+            android:name=".activity.gqzy.GqzySearchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.FeedbackActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.FeedbackSetActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.HeadIconActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.LiveActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.HomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.MovieDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.LocalVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.DownloadActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout" />
+        <activity
+            android:name=".activity.common.LocalVideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout" />
+        <activity android:name=".upnp.ui.UpnpActivity" />
+
+        <!-- 7.0以上共享文件 Start-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.xing.mita.movie.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+        <!-- 7.0以上共享文件 End-->
+
+        <service android:name=".service.UmengNotificationService" />
+        <service android:name=".service.DownLoadApkService" />
+        <service android:name=".service.DownLoadLiveService" />
+        <service android:name=".service.DownLoadVideoService" />
+        <service
+            android:name=".upnp.service.ClingUpnpService"
+            android:exported="false" />
+        <service
+            android:name=".upnp.service.SystemService"
+            android:exported="false" />
+
+
+        <receiver android:name=".receiver.NetworkConnectChangedReceiver" />
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="411" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="823" />
+
+    </application>
+
+</manifest>

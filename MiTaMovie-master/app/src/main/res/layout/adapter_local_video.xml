@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="?android:selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/iv_local_video_thumb"
+        android:layout_width="128dp"
+        android:layout_height="72dp"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_local_video_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_marginStart="10dp"
+        android:includeFontPadding="false"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_local_video_thumb"
+        app:layout_constraintTop_toTopOf="@id/iv_local_video_thumb" />
+
+    <TextView
+        android:id="@+id/tv_local_video_during"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_local_video_size"
+        app:layout_constraintStart_toStartOf="@id/tv_local_video_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_local_video_name" />
+
+    <TextView
+        android:id="@+id/tv_local_video_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_local_video_thumb"
+        app:layout_constraintStart_toStartOf="@id/tv_local_video_name" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_check"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/shape_check_bg"
+        android:includeFontPadding="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_gap"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

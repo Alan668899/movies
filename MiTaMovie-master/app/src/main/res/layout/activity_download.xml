@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/main_color">
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/layout_title" />
+
+    <TextView
+        android:id="@+id/tv_edit"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:gravity="center_vertical|end"
+        android:paddingEnd="16dp"
+        android:text="@string/edit"
+        android:textColor="@color/black"
+        android:textSize="19dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_local"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/title_layout">
+
+        <com.xing.mita.movie.view.IconFontView
+            android:id="@+id/ifv_local"
+            android:layout_width="128dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/shape_cache_tag"
+            android:gravity="center"
+            android:text="&#xe641;"
+            android:textColor="@color/color_66"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="本地视频"
+            android:textSize="19dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_local_nun"
+            app:layout_constraintStart_toEndOf="@id/ifv_local"
+            app:layout_constraintTop_toTopOf="@id/ifv_local" />
+
+        <TextView
+            android:id="@+id/tv_local_nun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/local_video_num"
+            app:layout_constraintBottom_toBottomOf="@id/ifv_local"
+            app:layout_constraintStart_toStartOf="@id/text"
+            app:layout_constraintTop_toBottomOf="@id/text" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_download"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="?android:selectableItemBackground"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/cl_local">
+
+        <com.xing.mita.movie.view.IconFontView
+            android:id="@+id/ifv_cache"
+            android:layout_width="128dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/shape_cache_tag"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="&#xe62e;"
+            android:textColor="@color/color_33"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.xing.mita.movie.view.IconFontView
+            android:id="@+id/ifv_cache_num_bg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:includeFontPadding="false"
+            android:text="&#xe83e;"
+            android:textColor="#4a5f70"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="@id/ifv_cache"
+            app:layout_constraintTop_toTopOf="@id/ifv_cache" />
+
+        <TextView
+            android:id="@+id/tv_cache_num"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:text="10"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="@id/ifv_cache_num_bg"
+            app:layout_constraintTop_toTopOf="@id/ifv_cache_num_bg" />
+
+        <TextView
+            android:id="@+id/tv_cache_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:includeFontPadding="false"
+            android:textSize="19dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_cache_name"
+            app:layout_constraintStart_toEndOf="@id/ifv_cache"
+            app:layout_constraintTop_toTopOf="@id/ifv_cache" />
+
+        <ProgressBar
+            android:id="@+id/pb_cache"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="3.8dp"
+            android:progress="50"
+            android:progressDrawable="@drawable/progress_video_seek"
+            app:layout_constraintBottom_toTopOf="@id/tv_cache_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_cache_status" />
+
+        <TextView
+            android:id="@+id/tv_cache_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textSize="14dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_cache_status"
+            app:layout_constraintEnd_toEndOf="@id/pb_cache" />
+
+        <TextView
+            android:id="@+id/tv_cache_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@id/ifv_cache"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_cache_status"
+            app:layout_constraintTop_toBottomOf="@id/tv_cache_status" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_cache_num_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_download" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/pb_memsize"
+        app:layout_constraintTop_toBottomOf="@id/tv_cache_num_show">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_cache_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_memsize"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/progress_memory"
+        app:layout_constraintBottom_toTopOf="@id/tv_all" />
+
+    <TextView
+        android:id="@+id/tv_cache_size_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cache_size_tip"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/pb_memsize"
+        app:layout_constraintEnd_toEndOf="@id/pb_memsize"
+        app:layout_constraintStart_toStartOf="@id/pb_memsize"
+        app:layout_constraintTop_toTopOf="@id/pb_memsize" />
+
+    <TextView
+        android:id="@+id/tv_all"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="全选"
+        android:textColor="@color/black_2c"
+        android:textSize="18dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_delete"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_delete"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="@color/red"
+        android:textSize="18dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_all" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_gap"
+        app:layout_constraintTop_toTopOf="@id/tv_all" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="20dp"
+        android:background="@color/color_gap"
+        app:layout_constraintBottom_toBottomOf="@id/tv_all"
+        app:layout_constraintEnd_toEndOf="@id/tv_all"
+        app:layout_constraintTop_toTopOf="@id/tv_all" />
+
+</android.support.constraint.ConstraintLayout>

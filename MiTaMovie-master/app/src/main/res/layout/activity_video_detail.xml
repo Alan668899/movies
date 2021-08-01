@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color">
+
+    <com.xing.mita.movie.view.OwnWebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+    <com.xing.mita.movie.player.CoverVideoPlayer
+        android:id="@+id/video_player"
+        android:layout_width="match_parent"
+        android:layout_height="231dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_back_bg"
+        app:layout_constraintBottom_toBottomOf="@id/ifv_back"
+        app:layout_constraintEnd_toEndOf="@id/ifv_back"
+        app:layout_constraintStart_toStartOf="@id/ifv_back"
+        app:layout_constraintTop_toTopOf="@id/ifv_back" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_back"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="&#xe68f;"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_video_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="70dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/video_player" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_next"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="&#xe642;"
+        android:textColor="@color/color_66"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_video_name"
+        app:layout_constraintEnd_toEndOf="@id/tv_video_name"
+        app:layout_constraintTop_toTopOf="@id/tv_video_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/intro"
+        android:textColor="@color/color_66"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_video_name"
+        app:layout_constraintEnd_toStartOf="@id/ifv_next"
+        app:layout_constraintTop_toTopOf="@id/tv_video_name" />
+
+    <TextView
+        android:id="@+id/tv_origin_tip"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:text="来源："
+        android:textColor="@color/color_66"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toStartOf="@id/ifv_collect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_video_name" />
+
+    <TextView
+        android:id="@+id/tv_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="70dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_origin_tip"
+        app:layout_constraintStart_toStartOf="@id/tv_origin_tip"
+        app:layout_constraintTop_toTopOf="@id/tv_origin_tip" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_origin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/icon_down"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_origin"
+        app:layout_constraintStart_toEndOf="@id/tv_origin"
+        app:layout_constraintTop_toTopOf="@id/tv_origin" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_share"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="&#xe690;"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_video_name" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_collect"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="&#xe60e;"
+        android:textColor="@color/black"
+        android:textSize="19dp"
+        app:layout_constraintEnd_toStartOf="@id/ifv_share"
+        app:layout_constraintTop_toBottomOf="@id/tv_video_name" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_download"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="&#xe62e;"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/ifv_collect"
+        app:layout_constraintTop_toBottomOf="@id/tv_video_name" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_x5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="&#xe67f;"
+        android:textColor="@color/color_99"
+        android:textSize="19dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/ifv_download"
+        app:layout_constraintTop_toBottomOf="@id/tv_video_name" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_tv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="&#xe860;"
+        android:textColor="@color/color_99"
+        android:textSize="19dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/ifv_x5"
+        app:layout_constraintTop_toBottomOf="@id/tv_video_name" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_episode"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_origin_tip" />
+
+</android.support.constraint.ConstraintLayout>

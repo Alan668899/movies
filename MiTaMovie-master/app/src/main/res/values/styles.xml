@@ -1,0 +1,24 @@
+<resources>
+
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
+        <item name="colorPrimaryDark">@color/main_color</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/welcome_layler_drawable</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--PopWindow动画-->
+    <style name="pop_anim_style">
+        <item name="android:windowEnterAnimation">@anim/pop_show</item>
+        <item name="android:windowExitAnimation">@anim/pop_dismiss</item>
+    </style>
+
+    <!--升级pop-->
+    <style name="PopupStyle" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_zoomin</item>
+        <item name="android:windowExitAnimation">@anim/pop_zoomout</item>
+    </style>
+
+</resources>

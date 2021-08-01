@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_tab_movie"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_gap"
+        app:layout_constraintTop_toTopOf="@id/tv_tab_movie" />
+
+    <TextView
+        android:id="@+id/tv_tab_movie"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="4dp"
+        android:text="点播"
+        android:textColor="@color/color_66"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_tab_live"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_movie"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:includeFontPadding="false"
+        android:text="&#xe8b4;"
+        android:textColor="@color/color_66"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="@id/tv_tab_movie"
+        app:layout_constraintStart_toStartOf="@id/tv_tab_movie"
+        app:layout_constraintTop_toTopOf="@id/tv_tab_movie" />
+
+    <TextView
+        android:id="@+id/tv_tab_live"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="4dp"
+        android:text="直播"
+        android:textColor="@color/color_66"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_tab_me"
+        app:layout_constraintStart_toEndOf="@id/tv_tab_movie" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_live"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:includeFontPadding="false"
+        android:text="&#xe64a;"
+        android:textColor="@color/color_66"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="@id/tv_tab_live"
+        app:layout_constraintStart_toStartOf="@id/tv_tab_live"
+        app:layout_constraintTop_toTopOf="@id/tv_tab_live" />
+
+    <TextView
+        android:id="@+id/tv_tab_me"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="4dp"
+        android:text="@string/tab_me"
+        android:textColor="@color/color_66"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_tab_live" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_me"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:includeFontPadding="false"
+        android:text="&#xe6a5;"
+        android:textColor="@color/color_66"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="@id/tv_tab_me"
+        app:layout_constraintStart_toStartOf="@id/tv_tab_me"
+        app:layout_constraintTop_toTopOf="@id/tv_tab_me" />
+
+</android.support.constraint.ConstraintLayout>

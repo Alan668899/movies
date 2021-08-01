@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color"
+    android:animateLayoutChanges="true">
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="&#xe68f;"
+        android:textColor="@color/color_66"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:hint="死侍2"
+        android:imeOptions="actionSearch"
+        android:paddingStart="16dp"
+        android:paddingEnd="50dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@id/tv_search"
+        app:layout_constraintStart_toEndOf="@id/ifv_back" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_clear"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:text="&#xe605;"
+        android:textColor="@color/black_2c"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@id/et_search" />
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="搜索"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e7"
+        app:layout_constraintTop_toBottomOf="@id/et_search" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:descendantFocusability="blocksDescendants"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_search">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants">
+
+            <com.xing.mita.movie.view.IconFontView
+                android:id="@+id/ifv_delete"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="&#xe619;"
+                android:textColor="@color/color_66"
+                android:textSize="17dp"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_search_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="历史搜索"
+                android:textColor="@color/color_66"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="@id/ifv_delete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ifv_delete" />
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/flow_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintTop_toBottomOf="@id/ifv_delete"
+                app:max_select="1" />
+
+            <TextView
+                android:id="@+id/tv_newest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/recent_update"
+                android:textColor="@color/color_66"
+                android:textSize="17dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flow_layout" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_hot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="600dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_newest" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

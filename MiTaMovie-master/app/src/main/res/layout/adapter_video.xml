@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="240dp">
+
+    <ImageView
+        android:id="@+id/iv_img"
+        android:layout_width="130dp"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_score"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:text="&#xe600;"
+        android:textColor="@color/colorAccent"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="@id/iv_img"
+        app:layout_constraintTop_toTopOf="@id/iv_img" />
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintEnd_toEndOf="@id/ifv_score"
+        app:layout_constraintStart_toStartOf="@id/ifv_score"
+        app:layout_constraintBottom_toBottomOf="@id/ifv_score"
+        app:layout_constraintTop_toTopOf="@id/ifv_score" />
+
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:background="@color/black_t80"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_img"
+        app:layout_constraintEnd_toEndOf="@id/iv_img"
+        app:layout_constraintStart_toStartOf="@id/iv_img" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_actor"
+        app:layout_constraintStart_toStartOf="@id/iv_img"
+        app:layout_constraintTop_toBottomOf="@id/iv_img" />
+
+    <TextView
+        android:id="@+id/tv_actor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_marginBottom="5dp"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/iv_img"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+</android.support.constraint.ConstraintLayout>

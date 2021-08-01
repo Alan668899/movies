@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
+    android:layout_height="match_parent">
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_share_bg"
+        android:layout_width="67dp"
+        android:layout_height="67dp"
+        android:text="&#xe7ba;"
+        android:textSize="65dp"
+        android:includeFontPadding="false"
+        app:layout_constraintBottom_toTopOf="@id/tv_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.xing.mita.movie.view.IconFontView
+        android:id="@+id/ifv_share_icon"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:textColor="@color/white"
+        android:includeFontPadding="false"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="@id/ifv_share_bg"
+        app:layout_constraintEnd_toEndOf="@id/ifv_share_bg"
+        app:layout_constraintStart_toStartOf="@id/ifv_share_bg"
+        app:layout_constraintTop_toTopOf="@id/ifv_share_bg" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ifv_share_bg" />
+
+
+</android.support.constraint.ConstraintLayout>
